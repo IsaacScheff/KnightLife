@@ -1,0 +1,14 @@
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/bin/Debug/net7.0/GladiatorGame
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/bin/Debug/net7.0/GladiatorGame.deps.json
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/bin/Debug/net7.0/GladiatorGame.runtimeconfig.json
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/bin/Debug/net7.0/GladiatorGame.dll
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/bin/Debug/net7.0/GladiatorGame.pdb
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/GladiatorGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/GladiatorGame.AssemblyInfoInputs.cache
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/GladiatorGame.AssemblyInfo.cs
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/GladiatorGame.csproj.CoreCompileInputs.cache
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/GladiatorGame.dll
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/refint/GladiatorGame.dll
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/GladiatorGame.pdb
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/GladiatorGame.genruntimeconfig.cache
+/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/Debug/net7.0/ref/GladiatorGame.dll
