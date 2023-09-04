@@ -113,11 +113,10 @@ void CreateCharacter(){
 
 string PlayerSelection(string? playerInput){
     if (playerInput != null){
-            playerSelection = playerInput.ToLower();
+        return playerInput.ToLower();
     } else {
-        playerSelection = "No selection";
+        return "No selection";
     }
-    return playerSelection;
 }
 
 public class GameState
