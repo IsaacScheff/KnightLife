@@ -1,4 +1,7 @@
-﻿const string gameName = "~The Game~";
+﻿using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
+
+const string gameName = "~The Game~";
 const string invalidEntry = "Selection not understood. Please type either the number or title of your selection and press Enter.";
 bool exitGame = false;
 bool inIntro = true;
@@ -15,6 +18,9 @@ do{
         playerInput = Console.ReadLine();
         CreateCharacter();
     }
+
+    BasicGladiator gladiator = new BasicGladiator("GladiatorName", 150, "A fierce gladiator");
+
 
 }while(exitGame == false);
 
@@ -35,7 +41,7 @@ void CreateCharacter(){
             case "1": case "abarimon": 
                 gameState.playerRaceType = GameState.PlayerRace.Abarimon;
                 gameState.playerStats[0] += 1; //increase in agility
-                gameState.playerStats[4] -= 1; //decrease in vitality
+                gameState.playerStats[2] -= 1; //decrease in brawn
                 break;
             case "2": case "faun":
                 gameState.playerRaceType = GameState.PlayerRace.Faun;
@@ -45,7 +51,7 @@ void CreateCharacter(){
             case "3": case "harpy":
                 gameState.playerRaceType = GameState.PlayerRace.Harpy;
                 gameState.playerStats[1] += 1; //increase in brain-smarts
-                gameState.playerStats[2] -= 1; //decrease in brawn
+                gameState.playerStats[4] -= 1; //decrease in vitality
                 break;
             case "4": case "human":
                 gameState.playerRaceType = GameState.PlayerRace.Human;
@@ -77,7 +83,7 @@ void CreateCharacter(){
 
         classSelected = true;
         switch(playerSelection){    
-            case "1": case "bestiatius":
+            case "1": case "bestiarius":
                 gameState.playerClassType = GameState.PlayerClass.Bestiarius;
                 gameState.playerStats[1] += 2; //increase in brain-smarts
                 break;
@@ -93,7 +99,7 @@ void CreateCharacter(){
                 gameState.playerClassType = GameState.PlayerClass.Murmillo;
                 gameState.playerStats[4] += 2; //increase in vitality
                 break;
-            case "5": case "retiatius":
+            case "5": case "retiarius":
                 gameState.playerClassType = GameState.PlayerClass.Retiarius;
                 gameState.playerStats[0] += 2; //increase in agility
                 break;
@@ -111,24 +117,31 @@ void CreateCharacter(){
     Console.WriteLine($"Vitality: {gameState.playerStats[4]}");
 }
 
-string PlayerSelection(string? playerInput){
-    if (playerInput != null){
-        return playerInput.ToLower();
-    } else {
-        return "No selection";
-    }
+void HandleCombat(){
+    //takes in enemy as argument
+
+    //randomly select attack from list of enemy options
+    //display intended enemy attack 
+    //player makes choice
+    //loop
+
+    //if player dies ends the run
+    //on a win get gold or other rewards
 }
 
-public class GameState
-{
+string PlayerSelection(string? playerInput){
+    return playerInput?.ToLower() ?? "No selection";
+}
+
+public class GameState{
     public int[] playerStats = {4, 4, 4, 4, 4}; //[0] = agility, [1] = brain-smarts, [2] = brawn, [3] = intuition, [4] = vitality
     public int playerHealth;
     public int playerGold;
+    public int renown;
     public PlayerClass playerClassType;
     public PlayerRace playerRaceType; // Changed name to avoid conflict with enum
 
-    public enum PlayerClass
-    {
+    public enum PlayerClass{
         Bestiarius,
         Cestus,
         Dimachaerus,
@@ -136,13 +149,55 @@ public class GameState
         Retiarius
     }
 
-    public enum PlayerRace
-    {
+    public enum PlayerRace{
         Abarimon,
         Faun,
         Harpy,
         Human,
         Onocentaur
+    }
+}
+
+public class EnemyCombatant{
+    public string? Name { get; set; }
+    public int Health { get; set; }
+    public string? Description { get; set; }
+    public EnemyCombatant(string name, int health, string description){
+    }
+    public int previousAttack;
+    public delegate void AttackDelegate();
+    protected AttackDelegate[]? Attacks;
+    private static readonly Random attackRoll = new Random();
+
+    public void SelectAttack(){
+        int attack;
+        do {
+            attack = attackRoll.Next(0, Attacks?.Length ?? 0);  // Assuming 3 possible attacks indexed 1, 2, 3
+        } while (attack == this.previousAttack);
+        Attacks?[attack]();
+    }
+    //could also define some default attacks here? like stab and swing high/low 
+}
+
+public class BasicGladiator : EnemyCombatant{
+    public BasicGladiator(string name, int health, string description) : base(name, health, description) {
+        Attacks = new AttackDelegate[]{
+            SwingHigh,
+            SwingLow,
+            Stab
+        };
+    }
+    public void SwingHigh(){
+        Console.WriteLine("SwingHigh");
+        this.previousAttack = 0;
+    }
+    public void SwingLow(){
+        Console.WriteLine("SwingLow");
+        this.previousAttack = 1;
+    }
+    public void Stab(){
+        Console.WriteLine("Stab");
+        this.previousAttack = 2;
     }
 }
 
