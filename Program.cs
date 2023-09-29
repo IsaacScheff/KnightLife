@@ -10,7 +10,6 @@ string playerSelection;
 
 GameState gameState = new GameState();
 
-
 //this loop runs the game
 do{
     if(inIntro){
@@ -20,6 +19,8 @@ do{
     }
 
     BasicGladiator gladiator = new BasicGladiator("GladiatorName", 150, "A fierce gladiator");
+
+    HandleCombat(gladiator);
 
 
 }while(exitGame == false);
@@ -34,7 +35,7 @@ void CreateCharacter(){
 
     bool raceSelected = false;
     while(raceSelected == false){
-        playerSelection = PlayerSelection(Console.ReadLine());
+        playerSelection = HandleInput(Console.ReadLine());
 
         raceSelected = true;
         switch(playerSelection){   
@@ -79,7 +80,7 @@ void CreateCharacter(){
 
     bool classSelected = false;
     while(classSelected == false){
-        playerSelection = PlayerSelection(Console.ReadLine());
+        playerSelection = HandleInput(Console.ReadLine());
 
         classSelected = true;
         switch(playerSelection){    
@@ -117,87 +118,53 @@ void CreateCharacter(){
     Console.WriteLine($"Vitality: {gameState.playerStats[4]}");
 }
 
-void HandleCombat(){
-    //takes in enemy as argument
+void HandleCombat(EnemyCombatant enemy){
 
-    //randomly select attack from list of enemy options
-    //display intended enemy attack 
-    //player makes choice
-    //loop
+    bool isPlayerAlive = true;
+    bool isEnemyAlive = true;
 
-    //if player dies ends the run
-    //on a win get gold or other rewards
+    Console.WriteLine($"\n\rYou enter the arena to face a {enemy.Name}");
+
+    while(isPlayerAlive && isEnemyAlive)
+    {
+        // Enemy selects an attack.
+        enemy.SelectAttack();
+
+        // (Optional) Display intended enemy attack. This depends on game mechanics.
+        //Console.WriteLine($"Enemy is preparing to {enemy.CurrentAttackName}!");
+
+        // Player makes their move.
+        Console.WriteLine("Choose your move");
+        playerInput = Console.ReadLine()?.ToLower();
+        //method for player move selection
+
+        //resolve player attack
+
+        // 5. Check if player or enemy is defeated.
+        if(!isEnemyAlive)
+        {
+            Console.WriteLine($"You defeated the {enemy.Name}!");
+            // Add rewards, gold, etc.
+            GivePlayerRewards();
+            break;
+        }
+
+        if(!isPlayerAlive)
+        {
+            Console.WriteLine("You have been defeated.");
+            // End game or other logic here.
+            // EndGame();
+            break;
+        }
+    }
 }
 
-string PlayerSelection(string? playerInput){
+string HandleInput(string? playerInput){
     return playerInput?.ToLower() ?? "No selection";
 }
 
-public class GameState{
-    public int[] playerStats = {4, 4, 4, 4, 4}; //[0] = agility, [1] = brain-smarts, [2] = brawn, [3] = intuition, [4] = vitality
-    public int playerHealth;
-    public int playerGold;
-    public int renown;
-    public PlayerClass playerClassType;
-    public PlayerRace playerRaceType; // Changed name to avoid conflict with enum
-
-    public enum PlayerClass{
-        Bestiarius,
-        Cestus,
-        Dimachaerus,
-        Murmillo,
-        Retiarius
-    }
-
-    public enum PlayerRace{
-        Abarimon,
-        Faun,
-        Harpy,
-        Human,
-        Onocentaur
-    }
+void GivePlayerRewards(){
+    Console.WriteLine("Give Player rewards function");
 }
 
-public class EnemyCombatant{
-    public string? Name { get; set; }
-    public int Health { get; set; }
-    public string? Description { get; set; }
-    public EnemyCombatant(string name, int health, string description){
-    }
-    public int previousAttack;
-    public delegate void AttackDelegate();
-    protected AttackDelegate[]? Attacks;
-    private static readonly Random attackRoll = new Random();
-
-    public void SelectAttack(){
-        int attack;
-        do {
-            attack = attackRoll.Next(0, Attacks?.Length ?? 0);  // Assuming 3 possible attacks indexed 1, 2, 3
-        } while (attack == this.previousAttack);
-        Attacks?[attack]();
-    }
-    //could also define some default attacks here? like stab and swing high/low 
-}
-
-public class BasicGladiator : EnemyCombatant{
-    public BasicGladiator(string name, int health, string description) : base(name, health, description) {
-        Attacks = new AttackDelegate[]{
-            SwingHigh,
-            SwingLow,
-            Stab
-        };
-    }
-    public void SwingHigh(){
-        Console.WriteLine("SwingHigh");
-        this.previousAttack = 0;
-    }
-    public void SwingLow(){
-        Console.WriteLine("SwingLow");
-        this.previousAttack = 1;
-    }
-    public void Stab(){
-        Console.WriteLine("Stab");
-        this.previousAttack = 2;
-    }
-}
 
