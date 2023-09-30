@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4k7+Kw+4aJy1Wx9W1cTMNc7QQXfhjhU7W6+9txiR8CXcN9XeWgQ4PfoGLOo95C3j9Nsa3L30S9x1+dRFHquPAg==",
+  "dgSpecHash": "gmjO/LzsfCu4eIzG76z4K673yB7mOQQmLOSq78RWjdavZfJ/03ncSK+lyc+nwp060cugZjnresf7jhPS2rcc8Q==",
   "success": true,
-  "projectFilePath": "/Users/isaac/PersonalProjects/coding/games/GladiatorGame/GladiatorGame.csproj",
+  "projectFilePath": "/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/KnightLife.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

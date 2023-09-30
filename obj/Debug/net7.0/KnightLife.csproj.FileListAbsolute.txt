@@ -1,0 +1,14 @@
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/bin/Debug/net7.0/KnightLife
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/bin/Debug/net7.0/KnightLife.deps.json
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/bin/Debug/net7.0/KnightLife.runtimeconfig.json
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/bin/Debug/net7.0/KnightLife.dll
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/bin/Debug/net7.0/KnightLife.pdb
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/KnightLife.GeneratedMSBuildEditorConfig.editorconfig
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/KnightLife.AssemblyInfoInputs.cache
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/KnightLife.AssemblyInfo.cs
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/KnightLife.csproj.CoreCompileInputs.cache
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/KnightLife.dll
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/refint/KnightLife.dll
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/KnightLife.pdb
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/KnightLife.genruntimeconfig.cache
+/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/Debug/net7.0/ref/KnightLife.dll

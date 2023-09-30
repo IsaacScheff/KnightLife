@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/isaac/PersonalProjects/coding/games/GladiatorGame/GladiatorGame.csproj": {}
+    "/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/KnightLife.csproj": {}
   },
   "projects": {
-    "/Users/isaac/PersonalProjects/coding/games/GladiatorGame/GladiatorGame.csproj": {
+    "/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/KnightLife.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/isaac/PersonalProjects/coding/games/GladiatorGame/GladiatorGame.csproj",
-        "projectName": "GladiatorGame",
-        "projectPath": "/Users/isaac/PersonalProjects/coding/games/GladiatorGame/GladiatorGame.csproj",
+        "projectUniqueName": "/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/KnightLife.csproj",
+        "projectName": "KnightLife",
+        "projectPath": "/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/KnightLife.csproj",
         "packagesPath": "/Users/isaac/.nuget/packages/",
-        "outputPath": "/Users/isaac/PersonalProjects/coding/games/GladiatorGame/obj/",
+        "outputPath": "/Users/isaac/PersonalProjects/coding/games/KnightLife/KnightLife/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/isaac/.nuget/NuGet/NuGet.Config"
